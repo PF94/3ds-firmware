@@ -11,8 +11,11 @@ void main(void)
 {
 	fb_clear();
 	ivt_init();
+
+	u8 *top_display_fb = (u8 *)0x18300000; // temporary!!!
+	fillrect(top_display_fb, 0xFFF224, 40, 50, 50, 125);
+
 	print("Booted on a %s", cfg11_get_console_name());
-	print("nice");
 
 	// Todo: This sucks, would need to be an interrupt in the future
 	bool set_operation = false;

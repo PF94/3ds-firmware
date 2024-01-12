@@ -23,6 +23,14 @@ static inline void pixel(u8 *fb, u32 hex, u32 x, u32 y)
 	*fb++ = (hex >> 16) & 0xff;
 }
 
+void fillrect(u8 *fb, u32 hex, u32 x, u32 y, u32 w, u32 h) {
+	for(i32 i = y; i < y + h; i++) {
+        for(i32 j = x; j < x + w; j++) {
+            pixel(fb, hex, i, j);
+        }
+    }
+}
+
 void putc(bool isTopScreen, u32 posX, u32 posY, u32 color, char c)
 {
 	u8 *top_display_fb = (u8 *)0x18300000;

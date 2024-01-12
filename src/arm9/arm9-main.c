@@ -9,7 +9,7 @@ void _start(void)
 	// print("Hello world from the ARM9");
 	send_message(TEST);
 
-	i2c_write(3, 0x20, 1 << 0); // shutdown
+	//i2c_write(3, 0x20, 1 << 0); // shutdown
 
 	for (;;)
 		;
