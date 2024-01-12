@@ -1,14 +1,15 @@
 ### 3ds firmware
 
-A little experiment where I build a toy kernel for the new nintendo 3ds (n3ds).
+A bit of an experimental project for the Nintendo 3DS.
 
-<img src="https://media.discordapp.net/attachments/834872300561629244/936378762331828224/20220127_152753.jpg?width=881&height=661"></img>
+![2024-01-12 08 30 07](https://github.com/PF94/3ds-firmware/assets/45898787/948dfc40-7bad-4aa8-80ab-54b193697bd9)
+(Sorry for the crusty console)
 
 ### Building:
-I don't really expect anyone to build this so you'll have to change some things I hardcoded if you do want to build and run this:
-- Before building, make sure you have the follwing path: /usr/lib/gcc/arm-none-eabi/>version</. (By default, the version is 9.2.1, change this as needed in `flags.mk`)
-
-- The root level makefile (`Makefile`) will attempt to copy boot.firm to `/media/tim/3437-3631/luma/payloads/`, change this as needed.
+- The makefile currently contains hardcoded values, you may need to change them if you want to compile this.
+- You'll need to install a cross-compiler for the arm-none-eabi platform. On Fedora (and its forks), it's the ``arm-none-eabi-gcc-cs`` package. We currently don't use devkitARM.
+- The root directory (as in the 3ds-firmware repository after downloading/git cloning it)'s makefile will attempt to copy boot.firm to `/run/media/bluffingo/WII/luma/payloads/`, change this as needed.
+- To launch this firmware, you'll have to press and hold the Start button before powering on the console, akin to launching GodMode9.
 
 Building boot.firm:
 ```
